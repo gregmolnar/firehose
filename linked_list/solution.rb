@@ -49,3 +49,13 @@ def reverse_list_with_stack(list)
   end
   stack.top
 end
+
+def reverse_list(list, previous = nil)
+  next_node = list.next_node
+  list.next_node = previous
+  if next_node
+    reverse_list(next_node, list)
+  else
+    list
+  end
+end

@@ -20,4 +20,11 @@ class ListTest < Minitest::Test
       print_values(revlist)
     end
   end
+
+  def test_it_prints_list_in_reverse_order
+    revlist = reverse_list(@node3)
+    assert_output "37 --> 99 --> 12 --> nil\n" do
+      print_values(revlist)
+    end
+  end
 end
